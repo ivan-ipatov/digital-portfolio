@@ -1,6 +1,6 @@
 {
-  "name": "gravity-ui-example-nextjs",
-  "version": "0.1.0",
+  "name": "digital-portfolio",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "prepare": "husky install",
@@ -41,12 +41,6 @@
     "stylelint": "^15.10.3",
     "typescript": "^5.2.2"
   },
-  "engines": {
-    "node": ">=18"
-  },
-  "browserslist": [
-    "extends @gravity-ui/browserslist-config"
-  ],
   "overrides": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
