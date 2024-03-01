@@ -1,12 +1,12 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
 import block from 'bem-cn-lite';
 import {Theme, ThemeProvider} from '@gravity-ui/uikit';
 
 import './Wrapper.scss';
 import {Footer} from '../Footer/Footer';
 import {Header} from '../Header/Header';
+import {useState} from 'react';
 
 const b = block('wrapper');
 
@@ -21,7 +21,7 @@ export type AppProps = {
 };
 
 export const Wrapper: React.FC<AppProps> = ({children}) => {
-    const [theme, setTheme] = React.useState<Theme>(DEFAULT_THEME);
+    const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
     const isDark = theme === DARK;
     return (
         <ThemeProvider theme={theme}>

@@ -1,11 +1,13 @@
 {
-    "extends": [
-        "@gravity-ui/eslint-config",
-        "@gravity-ui/eslint-config/prettier"
-    ],
+    "extends": ["@gravity-ui/eslint-config", "@gravity-ui/eslint-config/prettier", "next"],
+    "rules": {
+        "react/no-unescaped-entities": "off",
+        "@next/next/no-page-custom-font": "off",
+        "prettier/prettier": "off",
+    },
     "root": true,
     "env": {
         "node": true,
-        "jest": true
-    }
+        "jest": true,
+    },
 }
