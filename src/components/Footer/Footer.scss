@@ -1,0 +1,25 @@
+@import './../../styles/variables.scss';
+$block: '.footer';
+
+#{$block} {
+    &__marking {
+        display: grid;
+        place-content: center;
+        justify-items: center;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    &__team_logo {
+        height: 100%;
+        width: 8rem;
+        @include md {
+            width: 10rem;
+        }
+        @include lg {
+            width: 12rem;
+        }
+    }
+    &__copyright {
+        text-align: center;
+    }
+}

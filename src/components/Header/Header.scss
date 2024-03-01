@@ -1,0 +1,36 @@
+@import './../../styles/variables.scss';
+$block: '.header';
+
+#{$block} {
+    &__marking {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        place-content: space-between;
+        padding: 1rem 0;
+    }
+    &__site_logo {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: #666;
+    }
+    &__site_logo_dark {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: #e8e8e8;
+    }
+    &__account {
+        display: grid;
+        justify-content: end;
+        align-items: center;
+        grid-template-columns: repeat(2, auto);
+        gap: 0.5rem;
+        @include md {
+            gap: 1rem;
+        }
+    }
+    &__name {
+        text-align: end;
+    }
+}

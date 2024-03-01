@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import block from 'bem-cn-lite';
-import {Button, Icon, Theme, ThemeProvider} from '@gravity-ui/uikit';
-import {Moon, Sun} from '@gravity-ui/icons';
+import {Theme, ThemeProvider} from '@gravity-ui/uikit';
 
 import './Wrapper.scss';
+import {Footer} from '../Footer/Footer';
+import {Header} from '../Header/Header';
 
 const b = block('wrapper');
 
@@ -21,32 +22,16 @@ export type AppProps = {
 
 export const Wrapper: React.FC<AppProps> = ({children}) => {
     const [theme, setTheme] = React.useState<Theme>(DEFAULT_THEME);
-
     const isDark = theme === DARK;
-
     return (
         <ThemeProvider theme={theme}>
-            <div className={b()}>
-                <div className={b('theme-button')}>
-                    <Button
-                        size="l"
-                        view="outlined"
-                        onClick={() => {
-                            setTheme(isDark ? LIGHT : DARK);
-                        }}
-                    >
-                        <Icon data={isDark ? Sun : Moon} />
-                    </Button>
-                </div>
-                <div className={b('layout')}>
-                    <div className={b('header')}>
-                        <div className={b('logo')}>
-                            <div className={b('gravity-logo', {dark: isDark})} />
-                            <div className={b('next-logo', {dark: isDark})} />
-                        </div>
-                    </div>
-                    <div className={b('content')}>{children}</div>
-                </div>
+            <div className={b('container')}>
+                <Header
+                    isDark={isDark}
+                    onClickButton={() => (isDark ? setTheme(LIGHT) : setTheme(DARK))}
+                />
+                {children}
+                <Footer isDark={isDark} />
             </div>
         </ThemeProvider>
     );

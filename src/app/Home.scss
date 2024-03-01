@@ -1,0 +1,12 @@
+@import './../styles/variables.scss';
+$block: '.wrapper';
+
+#{$block} {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 10px;
+    h3 {
+        font-size: 20px;
+    }
+}
