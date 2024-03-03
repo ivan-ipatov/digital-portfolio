@@ -1,4 +1,3 @@
-import block from 'bem-cn-lite';
 import './Home.scss';
 
 export default function Home() {
