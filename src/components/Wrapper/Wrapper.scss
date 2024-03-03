@@ -1,10 +1,16 @@
 @import './../../styles/variables.scss';
-$block: '.wrapper';
 
-#{$block} {
+.wrapper {
     &__container {
+        margin: 0 auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: 0 1rem;
+
         @include xsm {
             max-width: $xsm;
+            padding: 0 1.5rem;
         }
         @include sm {
             max-width: $sm;
@@ -14,26 +20,14 @@ $block: '.wrapper';
         }
         @include lg {
             max-width: $lg;
-        }
-        @include xl {
-            max-width: $xl;
-        }
-        @include xxl {
-            max-width: $xxl;
-        }
-        margin: 0 auto;
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        padding: 0 1rem;
-        @include xsm {
-            padding: 0 1.5rem;
-        }
-        @include lg {
             padding: 0 2.5rem;
         }
         @include xl {
+            max-width: $xl;
             padding: 0 6rem;
+        }
+        @include xxl {
+            max-width: $xxl;
         }
     }
 }

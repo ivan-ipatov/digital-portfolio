@@ -1,11 +1,9 @@
-@import './../styles/variables.scss';
-$block: '.wrapper';
-
-#{$block} {
+.main_section {
     display: grid;
     place-content: center;
     text-align: center;
     gap: 10px;
+
     h3 {
         font-size: 20px;
     }
