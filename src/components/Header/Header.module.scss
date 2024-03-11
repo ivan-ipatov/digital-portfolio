@@ -1,4 +1,4 @@
-@import './../../styles/variables.scss';
+@import './../../styles/mixins';
 
 .header {
     &__marking {
@@ -23,7 +23,7 @@
         display: grid;
         justify-content: end;
         align-items: center;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(4, auto);
         gap: 0.5rem;
         @include md {
             gap: 1rem;
@@ -31,5 +31,10 @@
     }
     &__name {
         text-align: end;
+    }
+    &__drawer {
+        @include lg {
+            display: none;
+        }
     }
 }

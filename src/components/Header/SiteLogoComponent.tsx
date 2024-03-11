@@ -1,6 +1,6 @@
 'use client';
 import block from 'bem-cn-lite';
-import './Header.scss';
+import styles from './Header.module.scss';
 
 interface IProps {
     isDark: boolean;
@@ -9,5 +9,7 @@ interface IProps {
 const b = block('header');
 
 export function SiteLogoComponent(props: IProps) {
-    return <div className={props.isDark ? b('site_logo_dark') : b('site_logo')}></div>;
+    return (
+        <div className={props.isDark ? styles[b('site_logo_dark')] : styles[b('site_logo')]}></div>
+    );
 }

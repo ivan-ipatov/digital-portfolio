@@ -8,7 +8,7 @@ import Image from 'next/image';
 import FavTeam from '../../../public/my-fav-team.svg';
 import FavTeamDark from '../../../public/my-fav-team-dark.svg';
 import block from 'bem-cn-lite';
-import './Footer.scss';
+import styles from './Footer.module.scss';
 
 const b = block('footer');
 
@@ -18,7 +18,7 @@ export function TeamLogoComponent(props: IProps) {
             priority={true}
             src={props.isDark ? FavTeamDark : FavTeam}
             alt="Логотип нашей команды"
-            className={b('team_logo')}
+            className={styles[b('team_logo')]}
         />
     );
 }

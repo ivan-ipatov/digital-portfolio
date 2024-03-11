@@ -1,4 +1,4 @@
-@import './../../styles/variables.scss';
+@import './../../styles/mixins';
 
 .wrapper {
     &__container {
@@ -9,7 +9,7 @@
         padding: 0 1rem;
 
         @include xsm {
-            max-width: $xsm;
+            max-width: 500px;
             padding: 0 1.5rem;
         }
         @include sm {

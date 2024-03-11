@@ -3,10 +3,11 @@
 import block from 'bem-cn-lite';
 import {Theme, ThemeProvider} from '@gravity-ui/uikit';
 
-import './Wrapper.scss';
+import styles from './Wrapper.module.scss';
 import {Footer} from '../Footer/Footer';
 import {Header} from '../Header/Header';
 import {useState} from 'react';
+import {SessionProvider} from 'next-auth/react';
 
 const b = block('wrapper');
 
@@ -24,15 +25,17 @@ export const Wrapper: React.FC<AppProps> = ({children}) => {
     const [theme, setTheme] = useState<Theme>(DEFAULT_THEME);
     const isDark = theme === DARK;
     return (
-        <ThemeProvider theme={theme}>
-            <div className={b('container')}>
-                <Header
-                    isDark={isDark}
-                    onClickButton={() => (isDark ? setTheme(LIGHT) : setTheme(DARK))}
-                />
-                {children}
-                <Footer isDark={isDark} />
-            </div>
-        </ThemeProvider>
+        <SessionProvider>
+            <ThemeProvider theme={theme}>
+                <div className={styles[b('container')]}>
+                    <Header
+                        isDark={isDark}
+                        onClickButton={() => (isDark ? setTheme(LIGHT) : setTheme(DARK))}
+                    />
+                    {children}
+                    <Footer isDark={isDark} />
+                </div>
+            </ThemeProvider>
+        </SessionProvider>
     );
 };
