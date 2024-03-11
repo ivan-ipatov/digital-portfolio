@@ -10,7 +10,7 @@ export default function Home() {
             <main className={styles['homepage-content']}>
                 <h3>Site under development</h3>
                 <p>by My favorite team</p>
-                <p>Signed in as {session.user?.email}</p>
+                <p>Signed in as {session.user?.name}</p>
                 <Button onClick={() => signOut()}>Sign out</Button>
             </main>
         );
