@@ -6,6 +6,7 @@ import block from 'bem-cn-lite';
 import GetUserName from '@/components/UserData/GetUserName';
 import UserAvatar from '@/components/UserData/UserAvatar';
 import {useEffect, useState} from 'react';
+import GetUserEmail from '@/components/UserData/GetUserEmail';
 
 const b = block('homepage-content');
 
@@ -32,6 +33,11 @@ export default function Home() {
                 <p>by My favorite team</p>
                 <UserAvatar />
                 <p>Привет, {<GetUserName />}</p>
+                {<GetUserEmail /> != undefined ? (
+                    <p>
+                        Твой email: <GetUserEmail />
+                    </p>
+                ) : null}
                 <Button onClick={() => signOut()}>Выйти</Button>
             </main>
         );
