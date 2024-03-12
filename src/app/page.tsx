@@ -1,5 +1,5 @@
 'use client';
-import {Button} from '@gravity-ui/uikit';
+import {Button, Skeleton} from '@gravity-ui/uikit';
 import styles from './Home.module.scss';
 import {signIn, signOut, useSession} from 'next-auth/react';
 import block from 'bem-cn-lite';
@@ -15,7 +15,9 @@ export default function Home() {
         <main className={styles[b()]}>
             <h3>Site under development</h3>
             <p>by My favorite team</p>
-            {status === 'authenticated' ? (
+            {status === 'loading' ? (
+                <Skeleton className={styles[b('skeleton')]} />
+            ) : status === 'authenticated' ? (
                 <>
                     <UserAvatar />
                     <p>Привет, {<GetUserName />}</p>
