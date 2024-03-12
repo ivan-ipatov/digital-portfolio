@@ -5,51 +5,43 @@ import {signIn, signOut, useSession} from 'next-auth/react';
 import block from 'bem-cn-lite';
 import GetUserName from '@/components/UserData/GetUserName';
 import UserAvatar from '@/components/UserData/UserAvatar';
-import {Suspense} from 'react';
+import {useEffect, useState} from 'react';
 
 const b = block('homepage-content');
 
 export default function Home() {
+    const [mounted, setMounted] = useState(false);
     const {data: session} = useSession();
-    return (
-        <main className={styles[b()]}>
-            <h3>Site under development</h3>
-            <p>by My favorite team</p>
-            <Suspense fallback={<Skeleton className={styles[b('skeleton')]} />}>
-                {session ? (
-                    [
-                        <div key={1}>
-                            <UserAvatar />
-                            <p>Привет, {<GetUserName />}</p>
-                            <Button onClick={() => signOut()}>Выйти</Button>
-                        </div>,
-                    ]
-                ) : (
-                    <Button onClick={() => signIn()}>Войти</Button>
-                )}
-            </Suspense>
-        </main>
-    );
-    // if (session) {
-    //     return (
-    //         <main className={styles[b()]}>
-    //             <h3>Site under development</h3>
-    //             <p>by My favorite team</p>
-    //             <Suspense fallback={<Skeleton className={styles[b('skeleton')]} />}>
-    //                 <UserAvatar />
-    //                 <p>Привет, {<GetUserName />}</p>
-    //             </Suspense>
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
-    //             <Button onClick={() => signOut()}>Выйти</Button>
-    //         </main>
-    //     );
-    // } else {
-    //     return (
-    //         <main className={styles[b()]}>
-    //             <h3>Site under development</h3>
-    //             <p>by My favorite team</p>
-    //             <Button onClick={() => signIn()}>Войти</Button>
-    //         </main>
-    //     );
-    // }
+    if (!mounted) {
+        return (
+            <main className={styles[b()]}>
+                <h3>Site under development</h3>
+                <p>by My favorite team</p>
+                <Skeleton className={styles[b('skeleton')]} />
+            </main>
+        );
+    }
+    if (session) {
+        return (
+            <main className={styles[b()]}>
+                <h3>Site under development</h3>
+                <p>by My favorite team</p>
+                <UserAvatar />
+                <p>Привет, {<GetUserName />}</p>
+                <Button onClick={() => signOut()}>Выйти</Button>
+            </main>
+        );
+    } else {
+        return (
+            <main className={styles[b()]}>
+                <h3>Site under development</h3>
+                <p>by My favorite team</p>
+                <Button onClick={() => signIn()}>Войти</Button>
+            </main>
+        );
+    }
 }
