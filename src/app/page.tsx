@@ -1,39 +1,25 @@
 'use client';
-import {Button, Skeleton} from '@gravity-ui/uikit';
+import {Button} from '@gravity-ui/uikit';
 import styles from './Home.module.scss';
 import {signIn, signOut, useSession} from 'next-auth/react';
 import block from 'bem-cn-lite';
 import GetUserName from '@/components/UserData/GetUserName';
 import UserAvatar from '@/components/UserData/UserAvatar';
-import {useEffect, useState} from 'react';
 import GetUserEmail from '@/components/UserData/GetUserEmail';
 
 const b = block('homepage-content');
 
 export default function Home() {
-    const [mounted, setMounted] = useState(false);
-    const {data: session} = useSession();
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+    const {status} = useSession();
 
-    if (!mounted) {
-        return (
-            <main className={styles[b()]}>
-                <h3>Site under development</h3>
-                <p>by My favorite team</p>
-                <Skeleton className={styles[b('skeleton')]} />
-            </main>
-        );
-    }
-    if (session) {
+    if (status === 'authenticated') {
         return (
             <main className={styles[b()]}>
                 <h3>Site under development</h3>
                 <p>by My favorite team</p>
                 <UserAvatar />
                 <p>Привет, {<GetUserName />}</p>
-                {<GetUserEmail /> != undefined ? (
+                {<GetUserEmail /> !== null ? (
                     <p>
                         Твой email: <GetUserEmail />
                     </p>

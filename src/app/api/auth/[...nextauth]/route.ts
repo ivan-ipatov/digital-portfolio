@@ -4,8 +4,8 @@ import VkProvider from 'next-auth/providers/vk';
 const handler = NextAuth({
     providers: [
         VkProvider({
-            clientId: process.env.VK_CLIENT_ID ?? '',
-            clientSecret: process.env.VK_CLIENT_SECRET ?? '',
+            clientId: process.env.VK_CLIENT_ID as string,
+            clientSecret: process.env.VK_CLIENT_SECRET as string,
             authorization: `https://oauth.vk.com/authorize?scope=phone_number&v=5.131`,
             profile(result: any) {
                 const profile = result.response?.[0] ?? {};
