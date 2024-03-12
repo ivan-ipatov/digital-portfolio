@@ -3,7 +3,8 @@ import {Button} from '@gravity-ui/uikit';
 import styles from './Home.module.scss';
 import {signIn, signOut, useSession} from 'next-auth/react';
 import block from 'bem-cn-lite';
-
+import Image from 'next/image';
+import AvatarPhoto from '../../public/avatar.jpg';
 const b = block('homepage-content');
 
 export default function Home() {
@@ -14,11 +15,8 @@ export default function Home() {
                 <h3>Site under development</h3>
                 <p>by My favorite team</p>
                 <div>
-                    <img
-                        src={
-                            session.user?.image ??
-                            'https://vsegda-pomnim.com/uploads/posts/2022-04/thumbs/1649232741_8-vsegda-pomnim-com-p-pustoe-litso-foto-10.jpg'
-                        }
+                    <Image
+                        src={session.user?.image ?? AvatarPhoto}
                         width={50}
                         className={styles[b('user-image')]}
                         alt="Фото пользователя"

@@ -8,6 +8,14 @@ const nextConfig = {
     //     });
     //     return config;
     // },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**.userapi.com',
+            },
+        ],
+    },
 };
 
 module.exports = nextConfig;
