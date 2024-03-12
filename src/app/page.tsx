@@ -11,29 +11,24 @@ const b = block('homepage-content');
 
 export default function Home() {
     const {status} = useSession();
-
-    if (status === 'authenticated') {
-        return (
-            <main className={styles[b()]}>
-                <h3>Site under development</h3>
-                <p>by My favorite team</p>
-                <UserAvatar />
-                <p>Привет, {<GetUserName />}</p>
-                {<GetUserEmail /> !== null ? (
-                    <p>
-                        Твой email: <GetUserEmail />
-                    </p>
-                ) : null}
-                <Button onClick={() => signOut()}>Выйти</Button>
-            </main>
-        );
-    } else {
-        return (
-            <main className={styles[b()]}>
-                <h3>Site under development</h3>
-                <p>by My favorite team</p>
+    return (
+        <main className={styles[b()]}>
+            <h3>Site under development</h3>
+            <p>by My favorite team</p>
+            {status === 'authenticated' ? (
+                <>
+                    <UserAvatar />
+                    <p>Привет, {<GetUserName />}</p>
+                    {<GetUserEmail /> !== null || undefined ? (
+                        <p>
+                            Твой email: <GetUserEmail />
+                        </p>
+                    ) : null}
+                    <Button onClick={() => signOut()}>Выйти</Button>
+                </>
+            ) : (
                 <Button onClick={() => signIn()}>Войти</Button>
-            </main>
-        );
-    }
+            )}
+        </main>
+    );
 }
