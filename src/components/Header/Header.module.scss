@@ -32,9 +32,10 @@
     &__name {
         text-align: end;
     }
+    /* stylelint-disable declaration-no-important */
     &__drawer {
         @include lg {
-            display: none;
+            display: none !important;
         }
     }
 }
