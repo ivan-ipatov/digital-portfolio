@@ -6,8 +6,7 @@ const handler = NextAuth({
         VkProvider({
             clientId: process.env.VK_CLIENT_ID ?? '',
             clientSecret: process.env.VK_CLIENT_SECRET ?? '',
-            profile(result) {
-                const profile = result.response?.[0] ?? {};
+            profile(profile) {
                 return {
                     id: profile.id,
                     name: [profile.first_name, profile.last_name].filter(Boolean).join(' '),
