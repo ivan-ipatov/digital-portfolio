@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import AvatarPhoto from '../../public/avatar.jpg';
+import AvatarPhoto from '../../../public/avatar.jpg';
 import {useSession} from 'next-auth/react';
 import block from 'bem-cn-lite';
-import styles from 'UserData.module.scss';
+import styles from './UserData.module.scss';
 
 const b = block('user-avatar');
 
-export function UserAvatar() {
+export default function UserAvatar() {
     const {data: session} = useSession();
     return (
         <div>
