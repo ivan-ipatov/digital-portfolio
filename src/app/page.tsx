@@ -1,10 +1,11 @@
 'use client';
-import {Button} from '@gravity-ui/uikit';
+import {Button, Skeleton} from '@gravity-ui/uikit';
 import styles from './Home.module.scss';
 import {signIn, signOut, useSession} from 'next-auth/react';
 import block from 'bem-cn-lite';
 import GetUserName from '@/components/UserData/GetUserName';
 import UserAvatar from '@/components/UserData/UserAvatar';
+import {Suspense} from 'react';
 
 const b = block('homepage-content');
 
@@ -15,8 +16,11 @@ export default function Home() {
             <main className={styles[b()]}>
                 <h3>Site under development</h3>
                 <p>by My favorite team</p>
-                <UserAvatar />
-                <p>Привет, {GetUserName()}</p>
+                <Suspense fallback={<Skeleton className={styles[b('skeleton')]} />}>
+                    <UserAvatar />
+                    <p>Привет, {<GetUserName />}</p>
+                </Suspense>
+
                 <Button onClick={() => signOut()}>Выйти</Button>
             </main>
         );
