@@ -9,7 +9,7 @@ const handler = NextAuth({
             authorization: {params: {scope: '0'}},
             profile(profile) {
                 return {
-                    id: profile.id,
+                    id: profile.sub,
                     name: [profile.first_name, profile.last_name].filter(Boolean).join(' '),
                     email: profile.email,
                     image: profile.photo_200,
