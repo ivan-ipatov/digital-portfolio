@@ -7,7 +7,7 @@ const handler = NextAuth({
             clientId: process.env.VK_CLIENT_ID as string,
             clientSecret: process.env.VK_CLIENT_SECRET as string,
             authorization: {params: {scope: 'phone_number'}},
-            userinfo: {params: {fields: 'photo_100 email'}},
+            userinfo: {params: {fields: 'email photo_100'}},
             profile(profile) {
                 return {
                     id: profile.id,
