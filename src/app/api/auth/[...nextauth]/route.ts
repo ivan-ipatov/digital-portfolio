@@ -15,6 +15,7 @@ const handler = NextAuth({
                     image: profile.photo_200,
                 };
             },
+            allowDangerousEmailAccountLinking: true,
         }),
         // ...add more providers here
     ],
