@@ -13,6 +13,7 @@ export default function UserAvatar() {
             <Image
                 src={session?.user?.image ?? AvatarPhoto}
                 width={50}
+                height={50}
                 className={styles[b()]}
                 alt="Фото пользователя"
             />
