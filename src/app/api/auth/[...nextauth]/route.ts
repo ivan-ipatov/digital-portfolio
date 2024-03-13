@@ -7,9 +7,10 @@ const handler = NextAuth({
             clientId: process.env.VK_CLIENT_ID as string,
             clientSecret: process.env.VK_CLIENT_SECRET as string,
             authorization: {params: {scope: '0'}},
-            profile(profile) {
+            profile(result) {
+                const profile = result.response?.[0] ?? {};
                 return {
-                    id: profile.sub,
+                    id: profile.id,
                     name: [profile.first_name, profile.last_name].filter(Boolean).join(' '),
                     email: profile.email,
                     image: profile.photo_200,
