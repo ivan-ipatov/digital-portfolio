@@ -8,7 +8,8 @@ const handler = NextAuth({
             clientSecret: process.env.VK_CLIENT_SECRET as string,
             authorization: {params: {scope: 'phone_number'}},
             userinfo: {params: {fields: 'email photo_100'}},
-            profile(profile) {
+            profile(result) {
+                const profile = result.response?.[0] ?? {};
                 return {
                     id: profile.id,
                     name: [profile.first_name, profile.last_name].filter(Boolean).join(' '),
