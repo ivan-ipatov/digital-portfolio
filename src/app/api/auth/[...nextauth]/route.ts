@@ -6,9 +6,8 @@ const handler = NextAuth({
         VkProvider({
             clientId: process.env.VK_CLIENT_ID as string,
             clientSecret: process.env.VK_CLIENT_SECRET as string,
-            authorization: `https://oauth.vk.com/authorize?scope=phone_number&v=5.131`,
-            profile(result: any) {
-                const profile = result.response?.[0] ?? {};
+            authorization: {params: {scope: 'email phone_number'}},
+            profile(profile) {
                 return {
                     id: profile.id,
                     name: [profile.first_name, profile.last_name].filter(Boolean).join(' '),
