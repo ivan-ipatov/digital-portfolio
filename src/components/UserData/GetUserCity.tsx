@@ -1,7 +1,7 @@
 'use client';
 import {useSession} from 'next-auth/react';
 
-export default function GetUserEmail() {
+export default function GetUserCity() {
     const {data: session} = useSession();
-    return session?.user?.email ?? 'Не указано';
+    return session?.user?.city ?? 'Не указано';
 }

@@ -1,3 +1,7 @@
 .user-avatar {
-    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    &__rounded {
+        border-radius: 50%;
+    }
 }

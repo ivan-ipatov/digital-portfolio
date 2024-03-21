@@ -14,7 +14,18 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: '**.userapi.com',
             },
+            {
+                protocol: 'https',
+                hostname: '**.googleusercontent.com',
+            },
+            {
+                protocol: 'https',
+                hostname: '**.unsplash.com',
+            },
         ],
+    },
+    experimental: {
+        serverActions: true,
     },
 };
 

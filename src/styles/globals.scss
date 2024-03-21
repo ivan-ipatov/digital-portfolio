@@ -1,1 +1,11 @@
 @import 'normalize';
+
+.g-popup {
+    margin-top: 8px;
+}
+.g-modal__content {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    padding: 40px 40px;
+}

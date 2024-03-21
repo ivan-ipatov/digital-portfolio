@@ -7,8 +7,9 @@
         justify-items: center;
         gap: 0.5rem;
         padding-bottom: 0.5rem;
+        margin-top: 20px;
     }
-    &__team_logo {
+    &__team-logo {
         height: 100%;
         width: 8rem;
         @include md {

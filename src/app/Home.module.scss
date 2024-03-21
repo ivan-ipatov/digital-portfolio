@@ -8,7 +8,9 @@
         font-size: 20px;
     }
     &__skeleton {
-        width: full;
-        height: 100px;
+        height: 150px;
+    }
+    &__user-avatar {
+        border-radius: 50%;
     }
 }

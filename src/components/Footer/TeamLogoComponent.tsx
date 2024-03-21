@@ -18,7 +18,7 @@ export function TeamLogoComponent(props: IProps) {
             priority={true}
             src={props.isDark ? FavTeamDark : FavTeam}
             alt="Логотип нашей команды"
-            className={styles[b('team_logo')]}
+            className={styles[b('team-logo')]}
         />
     );
 }
