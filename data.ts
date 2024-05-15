@@ -7,7 +7,7 @@ export const postsData = [
         published: '01.05.2024',
         category: 'Science',
         links: ['https://valise.sprl.tech/categories/ai/1-TypeScript-Course'],
-        thumbnail: '../public/typescript.png',
+        thumbnail: '/typescript.png',
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const postsData = [
         published: '31.04.2024',
         category: 'Science',
         links: ['https://valise.sprl.tech/categories/ai/2-Leonardo-AI-is-the-best-tool'],
-        thumbnail: '../public/leonardo.png',
+        thumbnail: '/leonardo.png',
     },
     {
         id: 3,
