@@ -6,7 +6,7 @@ export const postsData = [
         author: 'John Doe',
         published: '01.05.2024',
         category: 'Science',
-        links: ['https://localhost/categories/ai/1-TypeScript-Course'],
+        links: ['https://valise.sprl.tech/categories/ai/1-TypeScript-Course'],
         thumbnail: '/typescript.png',
     },
     {
@@ -16,7 +16,7 @@ export const postsData = [
         author: 'John Doe',
         published: '31.04.2024',
         category: 'Science',
-        links: ['https://localhost/categories/ai/2-Leonardo-AI-is-the-best-tool'],
+        links: ['https://valise.sprl.tech/categories/ai/2-Leonardo-AI-is-the-best-tool'],
         thumbnail: '/leonardo.png',
     },
     {
@@ -26,7 +26,7 @@ export const postsData = [
         author: 'John Doe',
         published: '29.04.2024',
         category: 'Science',
-        links: ['https://localhost/categories/mobile/3-Android-new-release'],
+        links: ['https://valise.sprl.tech/categories/mobile/3-Android-new-release'],
         thumbnail:
             'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -37,7 +37,7 @@ export const postsData = [
         author: 'John Doe',
         published: '02.05.2024',
         category: 'Science',
-        links: ['https://localhost/categories/ai/4-Kotlin-Features'],
+        links: ['https://valise.sprl.tech/categories/ai/4-Kotlin-Features'],
         thumbnail:
             'https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -48,7 +48,7 @@ export const postsData = [
         author: 'John Doe',
         published: '03.05.2024',
         category: 'Science',
-        links: ['https://localhost/categories/ai/5-Aurora-UI-is-now-Free'],
+        links: ['https://valise.sprl.tech/categories/ai/5-Aurora-UI-is-now-Free'],
         thumbnail:
             'https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -59,7 +59,7 @@ export const postsData = [
         author: 'Admin',
         published: '06.05.2024',
         category: 'ChangeLog',
-        links: ['https://localhost/categories/changelog/6-Site-Changes'],
+        links: ['https://valise.sprl.tech/categories/changelog/6-Site-Changes'],
         thumbnail:
             'https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -70,7 +70,7 @@ export const postsData = [
         author: 'Admin',
         published: '06.05.2024',
         category: 'ChangeLog',
-        links: ['https://localhost/categories/changelog/6-Site-Changes'],
+        links: ['https://valise.sprl.tech/categories/changelog/6-Site-Changes'],
         thumbnail:
             'https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -81,7 +81,7 @@ export const postsData = [
         author: 'Admin',
         published: '06.05.2024',
         category: 'ChangeLog',
-        links: ['https://localhost/categories/changelog/6-Site-Changes'],
+        links: ['https://valise.sprl.tech/categories/changelog/6-Site-Changes'],
         thumbnail:
             'https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -92,7 +92,7 @@ export const postsData = [
         author: 'Admin',
         published: '06.05.2024',
         category: 'ChangeLog',
-        links: ['https://localhost/categories/changelog/6-Site-Changes'],
+        links: ['https://valise.sprl.tech/categories/changelog/6-Site-Changes'],
         thumbnail:
             'https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
@@ -103,7 +103,7 @@ export const postsData = [
         author: 'Admin',
         published: '06.05.2024',
         category: 'ChangeLog',
-        links: ['https://localhost/categories/changelog/6-Site-Changes'],
+        links: ['https://valise.sprl.tech/categories/changelog/6-Site-Changes'],
         thumbnail:
             'https://images.unsplash.com/photo-1593378026483-2a1fd46a35bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
