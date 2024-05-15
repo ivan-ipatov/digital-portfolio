@@ -10,6 +10,7 @@ interface IProps {
     setState: () => void;
     state: boolean;
 }
+
 export default function HeaderDrawer(props: IProps) {
     const {status} = useSession();
     return (

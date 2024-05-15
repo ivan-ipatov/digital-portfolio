@@ -1,10 +1,6 @@
 'use client';
 
-interface IProps {
-    isDark: boolean;
-    onClickButton: MouseEventHandler;
-}
-
+import {CategoriesList} from '@/components/Categories/CategoriesList';
 import {SiteLogoComponent} from './SiteLogoComponent';
 import block from 'bem-cn-lite';
 import styles from './Header.module.scss';
@@ -15,6 +11,12 @@ import {signIn, useSession} from 'next-auth/react';
 import {usePathname} from 'next/navigation';
 import UserHeader from './UserHeader';
 import HeaderDrawer from './HeaderDrawer';
+
+interface IProps {
+    isDark: boolean;
+    onClickButton: MouseEventHandler;
+}
+
 const b = block('header');
 
 export function Header(props: IProps) {
@@ -23,8 +25,12 @@ export function Header(props: IProps) {
     const path = usePathname();
     return (
         <div className={styles[b('marking')]}>
-            <SiteLogoComponent />
-
+            <div className={styles[b('left-side')]}>
+                <SiteLogoComponent />
+                <div className={styles[b('categories')]}>
+                    <CategoriesList />
+                </div>
+            </div>
             <div className={styles[b('account')]}>
                 {status === 'loading' ? (
                     // Устанавливаем width для скелетона

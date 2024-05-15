@@ -5,9 +5,9 @@ import {Theme, ThemeProvider} from '@gravity-ui/uikit';
 import styles from './Wrapper.module.scss';
 import {Footer} from '../Footer/Footer';
 import {Header} from '../Header/Header';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {SessionProvider} from 'next-auth/react';
-import {getCookie, setCookie} from './getThemeCookie';
+
 const b = block('wrapper');
 const DARK = 'dark';
 const LIGHT = 'light';
@@ -24,13 +24,10 @@ export const Wrapper: React.FC<AppProps> = ({children}) => {
     const isDark = theme === DARK;
     const toggleTheme = () => {
         if (isDark) {
-            setCookie(LIGHT);
+            setTheme(LIGHT);
         } else {
-            setCookie(DARK);
+            setTheme(DARK);
         }
-        getCookie().then((cookie) => {
-            setTheme(cookie ?? DEFAULT_THEME);
-        });
     };
     return (
         <SessionProvider>

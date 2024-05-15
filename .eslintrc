@@ -4,11 +4,11 @@
         "react/no-unescaped-entities": "off",
         "@next/next/no-page-custom-font": "off",
         "prettier/prettier": "off",
-        "new-cap": 0,
+        "new-cap": 0
     },
     "root": true,
     "env": {
         "node": true,
-        "jest": true,
-    },
+        "jest": true
+    }
 }

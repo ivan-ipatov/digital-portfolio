@@ -1,7 +1,9 @@
-@import './../../styles/mixins';
+@import "./../../styles/mixins";
+
 .top {
     margin-top: 15px;
 }
+
 .header {
     &__marking {
         display: grid;
@@ -9,15 +11,40 @@
         place-content: space-between;
         padding: 1rem 0;
     }
+
+    &__categories {
+        @import "./../../styles/mixins";
+        display: none;
+        @include lg {
+            display: inherit;
+        }
+    }
+
+    &__categories > ul {
+        display: grid;
+        align-items: center;
+        grid-auto-flow: column;
+        gap: 12px;
+    }
+
+    &__left-side {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, auto));
+        gap: 30px;
+        align-content: center;
+    }
+
     &__site_logo {
-        font-size: 1.5rem;
+        margin-top: 6px;
         user-select: none;
         cursor: pointer;
     }
+
     &__marking-site-logo {
         display: grid;
         align-items: center;
     }
+
     &__account {
         display: grid;
         justify-content: end;
@@ -28,25 +55,30 @@
             gap: 1rem;
         }
     }
+
     &__drawer {
         @include lg {
             display: none;
         }
     }
+
     &__skeleton-container {
         display: grid;
         align-items: center;
         width: 35px;
     }
+
     &__skeleton {
         height: 35px;
     }
+
     &__sign-in-mobile {
         display: none;
         @include lg {
             display: initial;
         }
     }
+
     &__drawer-main {
         display: grid;
         margin: 10px 30px;
@@ -54,6 +86,7 @@
         grid-auto-flow: column;
     }
 }
+
 .user-avatar {
     border-radius: 50%;
 }

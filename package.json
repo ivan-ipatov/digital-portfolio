@@ -1,5 +1,5 @@
 {
-  "name": "Valise",
+  "name": "valise",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,20 +15,23 @@
   "dependencies": {
     "bem-cn-lite": "^4.1.0",
     "clsx": "^2.1.0",
-    "next": "^13.5.6",
+    "next": "^14.2.3",
     "next-auth": "^4.24.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@gravity-ui/blog-constructor": "^6.1.1",
     "@gravity-ui/browserslist-config": "^4.1.0",
+    "@gravity-ui/components": "^3.4.1",
     "@gravity-ui/eslint-config": "^3.1.1",
     "@gravity-ui/icons": "^2.9.1",
-    "@gravity-ui/navigation": "^2.3.1",
+    "@gravity-ui/navigation": "^2.5.0",
+    "@gravity-ui/page-constructor": "^5.8.0",
     "@gravity-ui/prettier-config": "^1.1.0",
     "@gravity-ui/stylelint-config": "^4.0.0",
     "@gravity-ui/tsconfig": "^1.0.0",
-    "@gravity-ui/uikit": "^6.1.1",
+    "@gravity-ui/uikit": "^6.8.0",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.7.0",
     "@types/react": "^18.2.23",

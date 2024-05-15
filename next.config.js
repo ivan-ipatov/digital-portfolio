@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
     // webpack: (config) => {
     //     config.module.rules.push({
@@ -22,10 +22,11 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: '**.unsplash.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'valise.sprl.tech',
+            },
         ],
-    },
-    experimental: {
-        serverActions: true,
     },
 };
 
