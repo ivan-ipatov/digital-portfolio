@@ -1,6 +1,6 @@
 export const postsData = [
     {
-        id: 1,
+        id: 0,
         title: 'TypeScript Course',
         content: 'TypeScript Course new post',
         author: 'John Doe',
