@@ -15,7 +15,7 @@ export function SiteLogoComponent() {
             {/*</h1>*/}
             <Image
                 className={styles[b('site_logo')]}
-                src="/valise.svg"
+                src={'valise.svg'}
                 alt="Logo"
                 width={100}
                 height={50}

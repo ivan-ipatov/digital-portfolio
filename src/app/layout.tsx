@@ -6,7 +6,7 @@ import '@gravity-ui/uikit/styles/styles.css';
 import '../styles/globals.scss';
 
 export const metadata: Metadata = {
-    title: "Valise - Digital Portfolio for Your's Best Projects",
+    title: 'Valise - Digital Portfolio for Your Best Projects',
     description: 'Digital Portfolio',
 };
 
