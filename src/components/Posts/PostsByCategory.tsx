@@ -10,7 +10,7 @@ export async function PostsByCategory({category, name}: {category: string; name:
     const getPosts = await getPostByCategory(category);
     return (
         <div style={{paddingTop: '100px'}}>
-            <Text variant="display-3">{name}</Text>
+            <Text variant="display-1">{name}</Text>
             <div className={styles[b('subpost-grid-science')]}>
                 <PostByCategory postsByCategory={getPosts?.Posts ?? null} />
             </div>
