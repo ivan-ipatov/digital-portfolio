@@ -9,20 +9,23 @@ const b = block('post-cards');
 
 export async function PostCards() {
     const postsData: TPost[] = await getPosts();
-    const PostsData = postsData.filter((post: TPost) => post.atGlance);
+    if (postsData !== null) {
+        const PostsData = postsData.filter((post: TPost) => post.atGlance);
 
-    const LatestGlance = PostsData[0];
-    return (
-        <div className={styles[b('grid-hero')]}>
-            <HeroPostCards
-                id={LatestGlance.id}
-                links={LatestGlance.links}
-                title={LatestGlance.title}
-                thumbnail={LatestGlance.thumbnail}
-                published={formatDate(LatestGlance.createdAt)}
-                author={LatestGlance.author.name}
-            />
-            <HeroSidePostCards postsData={PostsData} />
-        </div>
-    );
+        const LatestGlance = PostsData[0];
+        return (
+            <div className={styles[b('grid-hero')]}>
+                <HeroPostCards
+                    id={LatestGlance.id}
+                    links={LatestGlance.links}
+                    title={LatestGlance.title}
+                    thumbnail={LatestGlance.thumbnail}
+                    published={formatDate(LatestGlance.createdAt)}
+                    author={LatestGlance.author.name}
+                />
+                <HeroSidePostCards postsData={PostsData} />
+            </div>
+        );
+    }
+    return null;
 }
