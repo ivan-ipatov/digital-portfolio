@@ -1,24 +1,26 @@
-import {Card} from '@gravity-ui/uikit';
+import {Card, Link} from '@gravity-ui/uikit';
 import Image from 'next/image';
 import styles from './Profile.module.scss';
 import block from 'bem-cn-lite';
+
 const b = block('cards');
 
 interface IProps {
     title: string;
     date: string;
-    src: string;
+    id: string;
+    thumbnail: string;
 }
 
 export default function UserPosts(props: IProps) {
     return (
-        <div className={styles[b()]}>
-            <Card className={styles[b('body')]}>
-                <div>
+        <Card className={styles[b('body')]}>
+            <Link href={'/post/' + props.id} view="primary">
+                <div className={styles[b('post')]}>
                     <Image
-                        src={props.src}
-                        width={200}
-                        height={100}
+                        src={props.thumbnail}
+                        width={1920}
+                        height={1080}
                         alt={'Изображение'}
                         className={styles[b('image')]}
                     />
@@ -27,7 +29,7 @@ export default function UserPosts(props: IProps) {
                         <p className={styles[b('date')]}>{props.date}</p>
                     </div>
                 </div>
-            </Card>
-        </div>
+            </Link>
+        </Card>
     );
 }

@@ -1,5 +1,3 @@
-'use client';
-
 interface IProps {
     isDark: boolean;
 }

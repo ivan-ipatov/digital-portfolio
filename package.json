@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "dev": "next dev -p 443 --experimental-https",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
@@ -13,12 +13,16 @@
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:prettier"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.1.0",
+    "@gravity-ui/date-components": "^2.4.0",
+    "@prisma/client": "^5.14.0",
     "bem-cn-lite": "^4.1.0",
     "clsx": "^2.1.0",
-    "next": "^14.2.3",
+    "next": "^14.2.4",
     "next-auth": "^4.24.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^11.1.3"
   },
   "devDependencies": {
     "@gravity-ui/blog-constructor": "^6.1.1",

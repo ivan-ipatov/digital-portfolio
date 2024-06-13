@@ -1,9 +1,7 @@
-'use client';
-
 import styles from './Home.module.scss';
 import block from 'bem-cn-lite';
 import {PostCards} from '@/components/Posts/PostCards';
-import {PostScience} from '@/components/Posts/PostScience';
+import {PostsByCategory} from '@/components/Posts/PostsByCategory';
 import {ChangeLog} from '@/components/Posts/ChangeLog';
 
 const b = block('homepage-content');
@@ -13,7 +11,8 @@ export default function Home() {
         <main className={styles[b()]}>
             <PostCards />
             <ChangeLog />
-            <PostScience />
+            <PostsByCategory name={'Наука'} category={'Science'} />
+            <PostsByCategory name={'Программирование'} category={'Programming'} />
         </main>
     );
 }

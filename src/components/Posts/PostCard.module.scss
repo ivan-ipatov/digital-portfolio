@@ -6,8 +6,8 @@
         padding: 10px;
         @include xl {
             grid-auto-flow: column;
+            justify-content: start;
         }
-        justify-content: start;
         gap: 15px;
         cursor: pointer;
     }
@@ -157,6 +157,133 @@
     &__body-subpost:hover {
         transform: scale(1.01);
         transition: transform .2s ease-in-out;
+    }
+}
+
+.post-page {
+
+    &__image {
+        width: 100%;
+        height: 50vh;
+        aspect-ratio: 16 / 9;
+        border-radius: var(--g-border-radius-s);
+        object-fit: cover;
+        position: relative;
+        z-index: 0;
+        filter: brightness(30%);
+    }
+
+    &__overlay {
+        position: relative;
+        display: inline-flex;
+
+        &:before {
+            content: "";
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: var(--g-border-radius-s);
+            background: linear-gradient(0deg, rgba(112, 53, 40, 0.8) 0%, rgba(255, 190, 92, 0.45) 80%);
+        }
+    }
+
+    &__image-grid {
+        position: relative;
+        display: grid;
+        @include xl {
+            padding: 0 10%;
+            margin-bottom: 40px;
+        }
+        margin-bottom: 20px;
+    }
+
+    &__meta-image {
+        @include xl {
+            padding: 0 10%;
+        }
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        @include md {
+            bottom: 25px;
+            left: 40px;
+        }
+        @include xl {
+            bottom: 25px;
+            left: 50px;
+        }
+        z-index: 2;
+        display: grid;
+        gap: 10px;
+        justify-items: start;
+    }
+
+    &__title {
+        font-size: 30px !important;
+        line-height: 110% !important;
+        color: white;
+        @include md {
+            font-size: var(--g-text-display-3-font-size) !important;
+            line-height: var(--g-text-display-3-line-height) !important;
+
+        }
+    }
+
+    &__user-label {
+        color: white;
+
+        &::after {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    }
+
+
+    &__meta-inside {
+        display: flex;
+        gap: 5px;
+
+    }
+
+    &__content {
+        display: grid;
+        gap: 25px;
+        position: relative;
+        @include xl {
+            padding: 0 10%;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        gap: 10px;
+        justify-items: start;
+    }
+
+    &__markdown {
+        @include xl {
+            padding: 0 10%;
+        }
+    }
+}
+
+.carousel {
+    &__image {
+        width: 100%;
+        height: 100%;
+        max-height: 40vh;
+        object-fit: cover;
+        border-radius: var(--g-border-radius-s);
+    }
+
+    &__image-big {
+        width: 60vw;
+        @include md {
+            width: 70vw;
+        }
+        height: 100%;
+        object-fit: cover;
+        margin: 15px;
     }
 }
 

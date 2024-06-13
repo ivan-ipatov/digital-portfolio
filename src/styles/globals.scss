@@ -4,13 +4,14 @@
     margin-top: 8px;
 }
 
-.g-modal__content {
-    display: grid;
-    justify-items: center;
-    gap: 8px;
-    padding: 40px 40px;
-}
-
 .g-link_view_normal:hover, .g-link_view_primary:hover, .g-link_view_secondary:hover {
     color: inherit !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFBE5C !important;
+}
+
+.swiper-slide-active {
+    transform: unset !important;
 }

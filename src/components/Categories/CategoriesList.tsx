@@ -1,20 +1,7 @@
-import {Link} from '@gravity-ui/uikit';
-import {CategoriesData} from '../../../data';
+import {MapCategories} from '@/components/Categories/MapCategories';
+import {getCategories} from '../../../utilities';
 
-export function CategoriesList() {
-    return (
-        <ul>
-            {CategoriesData &&
-                CategoriesData.map(
-                    (category: {
-                        id: number | null | undefined;
-                        name: string | null | undefined;
-                    }) => (
-                        <li key={category.id}>
-                            <Link href={`/categories/${category.name}`}>{category.name}</Link>
-                        </li>
-                    ),
-                )}
-        </ul>
-    );
+export async function CategoriesList() {
+    const CategoriesData = await getCategories();
+    return <MapCategories CategoriesData={CategoriesData} />;
 }
