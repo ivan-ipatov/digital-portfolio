@@ -90,3 +90,14 @@ export const getPostsByCategory = async (category: string): Promise<TCategory | 
     return null;
 };
 
+export const getUserData = async (email: string): Promise<TUser | null> => {
+    try {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/authors/${email}`, {
+            cache: 'no-store',
+        });
+        if (res.ok) {
+            return await res.json();
+        }
+    } catch (error) {}
+    return null;
+};
