@@ -1,6 +1,7 @@
 export type TCategory = {
     id: string;
     categoryName: string;
+    transcribeName: string;
     Posts: TPost[];
 };
 
@@ -26,7 +27,7 @@ export type TPost = {
     createdAt: string;
     updatedAt: string;
     categoryName: string;
-    links: string[];
+    link: string;
     thumbnail: string;
     atGlance: boolean;
 };

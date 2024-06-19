@@ -3,14 +3,19 @@ import {useState} from 'react';
 import {Tabs} from '@gravity-ui/uikit';
 import styles from './Profile.module.scss';
 import {File} from '@gravity-ui/icons';
-import UserPosts from '@/components/Profile/UserPosts';
 import block from 'bem-cn-lite';
 import {TPost} from '@/app/types';
 import {UserPostsProfile} from '@/components/Profile/UserPostsProfile';
+import {UserDiplomasProfile} from '@/components/Profile/UserDiplomasProfile';
 
 const b = block('tabs');
 
-export function ProfileTabs({UserPostsData}: {UserPostsData: TPost[] | null}) {
+type Props = {
+    UserPostsData: TPost[] | null;
+    UserDiplomas: TPost[] | null;
+};
+
+export function ProfileTabs({UserPostsData, UserDiplomas}: Props) {
     const [tab, setTab] = useState('first');
 
     return (
@@ -24,18 +29,15 @@ export function ProfileTabs({UserPostsData}: {UserPostsData: TPost[] | null}) {
                     icon={<File />}
                 />
             </Tabs>
-            <div className={styles[b('grid-cards')]}>
-                {tab === 'first' ? (
+            {tab === 'first' ? (
+                <div className={styles[b('grid-post-cards')]}>
                     <UserPostsProfile UserPostsData={UserPostsData} />
-                ) : (
-                    <UserPosts
-                        id={'1'}
-                        title="Цветочки"
-                        date="12"
-                        thumbnail="https://images.unsplash.com/photo-1709349669569-a0d0df064451?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    />
-                )}
-            </div>
+                </div>
+            ) : (
+                <div className={styles[b('grid-diploma-cards')]}>
+                    <UserDiplomasProfile DiplomaData={UserDiplomas} />
+                </div>
+            )}
         </>
     );
 }

@@ -11,12 +11,14 @@ export default async function ProfilePage() {
     const email = session?.user?.email ?? '';
     const UserData: TUser | null = await getUserPostsData(email);
     const UserPostsData =
-        UserData?.posts.filter((post) => post.categoryName.toLowerCase() !== 'changelog') ?? null;
+        UserData?.posts.filter((post) => !['changelog', 'diploma'].includes(post.categoryName)) ??
+        null;
+    const UserDiplomas = UserData?.posts.filter((post) => post.categoryName === 'diploma') ?? null;
     return (
         <>
             <Redirect />
             <UserCard />
-            <ProfileTabs UserPostsData={UserPostsData} />
+            <ProfileTabs UserPostsData={UserPostsData} UserDiplomas={UserDiplomas} />
         </>
     );
 }

@@ -33,6 +33,7 @@ export default async function Page(props: Props) {
             direction={postData?.direction ?? ''}
             startPeriod={postData?.startPeriod ?? ''}
             endPeriod={postData?.endPeriod ?? ''}
+            link={postData?.link ?? ''}
         />
     );
 }

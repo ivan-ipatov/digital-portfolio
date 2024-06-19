@@ -12,19 +12,11 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: '**.userapi.com',
+                hostname: '*',
             },
             {
-                protocol: 'https',
-                hostname: '**.googleusercontent.com',
-            },
-            {
-                protocol: 'https',
-                hostname: '**.unsplash.com',
-            },
-            {
-                protocol: 'https',
-                hostname: 'valise.sprl.tech',
+                protocol: 'http',
+                hostname: '*',
             },
         ],
     },

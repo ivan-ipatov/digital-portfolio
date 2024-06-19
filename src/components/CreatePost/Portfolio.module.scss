@@ -19,7 +19,6 @@
         display: grid;
         grid-template-rows: min-content;
         gap: 6px;
-
     }
 
     &__grid-inner-date {
@@ -39,6 +38,70 @@
         place-content: center;
         place-items: center;
         gap: 7px;
+    }
+
+    &__dragndrop-card > svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: var(--g-border-radius-s);
+    }
+
+    &__card {
+        display: grid;
+        place-content: center;
+        place-items: center;
+        gap: 5px;
+        padding: 15px;
+        width: 100%;
+    }
+
+    &__text {
+        width: 100%;
+    }
+
+    &__grid-attachments {
+        display: grid;
+        @include sm {
+            grid-template-columns: 4fr 1fr;
+        }
+        gap: 5px
+    }
+
+}
+
+.diploma {
+    &__grid {
+        display: grid;
+        gap: 20px;
+        grid-auto-flow: row;
+        @include md {
+            padding: 0 10%;
+        }
+        @include lg {
+            padding: 0 20%;
+        }
+        grid-template-rows: min-content;
+    }
+
+    &__dragndrop-card {
+        width: 100%;
+        height: 130px;
+        padding: 10px;
+        display: grid;
+        place-content: center;
+        place-items: center;
+        gap: 7px;
+    }
+
+    &__grid-inner {
+        display: grid;
+        grid-template-rows: min-content;
+        gap: 6px;
     }
 
     &__dragndrop-card > svg {

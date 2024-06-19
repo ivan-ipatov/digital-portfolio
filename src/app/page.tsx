@@ -11,8 +11,8 @@ export default function Home() {
         <main className={styles[b()]}>
             <PostCards />
             <ChangeLog />
-            <PostsByCategory name={'Наука'} category={'Science'} />
-            <PostsByCategory name={'Программирование'} category={'Programming'} />
+            <PostsByCategory name={'Наука'} category={'science'} />
+            <PostsByCategory name={'Программирование'} category={'programming'} />
         </main>
     );
 }

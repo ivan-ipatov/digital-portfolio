@@ -1,0 +1,16 @@
+@import "../../../styles/mixins";
+
+.page {
+    display: grid;
+    height: min-content;
+    gap: 15px;
+
+
+    &__text {
+        font-size: 20px;
+        @include lg {
+            font-size: 28px;
+        }
+    }
+}
+

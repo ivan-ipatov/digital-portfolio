@@ -5,11 +5,11 @@ import {CirclePlus} from '@gravity-ui/icons';
 
 const b = block('cards');
 
-export function AddNewPost() {
+export function AddNewPost({link}: {link: string}) {
     return (
         <Card className={styles[b('body')]}>
             <div className={styles[b('post')]}>
-                <Link href={'create/portfolio'} className={styles[b('create')]}>
+                <Link href={'create/' + link} className={styles[b('create')]}>
                     <Icon data={CirclePlus} size={40} />
                     <Text variant="body-2">Создать новый</Text>
                 </Link>

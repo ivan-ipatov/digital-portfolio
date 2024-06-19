@@ -21,8 +21,7 @@ export async function POST(req: Request) {
         categoryName,
         category,
         thumbnail,
-        publicId,
-        links,
+        link,
         createdAt,
         updatedAt,
         atGlance,
@@ -39,10 +38,14 @@ export async function POST(req: Request) {
         !categoryName ||
         !direction ||
         !startPeriod ||
-        !endPeriod ||
-        !categoryName
+        !endPeriod
     ) {
-        return NextResponse.json({error: 'Something is missing.'}, {status: 500});
+        return NextResponse.json(
+            {
+                error: `Something is missing.`,
+            },
+            {status: 500},
+        );
     }
 
     try {
@@ -58,9 +61,8 @@ export async function POST(req: Request) {
                 categoryName,
                 category,
                 thumbnail,
-                publicId,
                 authorEmail,
-                links,
+                link,
                 createdAt,
                 updatedAt,
                 atGlance,

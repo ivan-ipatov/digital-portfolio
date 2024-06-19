@@ -8,7 +8,6 @@ import NotFound from '../../../public/no-photo.png';
 
 type Props = {
     id: string;
-    links: string[];
     title: string;
     thumbnail: string;
     published: string;

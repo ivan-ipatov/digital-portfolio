@@ -17,7 +17,6 @@ export async function PostCards() {
             <div className={styles[b('grid-hero')]}>
                 <HeroPostCards
                     id={LatestGlance.id}
-                    links={LatestGlance.links}
                     title={LatestGlance.title}
                     thumbnail={LatestGlance.thumbnail}
                     published={formatDate(LatestGlance.createdAt)}

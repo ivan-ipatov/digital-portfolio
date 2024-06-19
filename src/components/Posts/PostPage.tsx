@@ -1,11 +1,12 @@
 'use client';
 import block from 'bem-cn-lite';
 import styles from './PostCard.module.scss';
-import {Text, UserLabel} from '@gravity-ui/uikit';
+import {Card, Icon, Link, Text, UserLabel} from '@gravity-ui/uikit';
 import Image from 'next/image';
 import {Directions} from '@/components/Categories/Directions';
 import PortfolioAttachments from '@/components/Posts/PortfolioAttachments';
 import {Metadata} from 'next';
+import {FileZipper} from '@gravity-ui/icons';
 
 type Props = {
     title: string;
@@ -18,6 +19,7 @@ type Props = {
     endPeriod: string;
     author: string;
     shortDescription: string;
+    link: string;
 };
 const b = block('post-page');
 
@@ -41,6 +43,7 @@ export function PostPage({
     date,
     author,
     image,
+    link,
 }: Props) {
     return (
         <div className={styles[b('grid')]}>
@@ -82,6 +85,22 @@ export function PostPage({
                     <Text variant="header-1">Период создания:</Text>
                     <Text variant="body-2">{startPeriod + ' - ' + endPeriod}</Text>
                 </div>
+                {link !== '' && (
+                    <Link href={link}>
+                        <Card
+                            style={{
+                                padding: '30px 100px',
+                                display: 'grid',
+                                gap: '10px',
+                                placeContent: 'center',
+                                placeItems: 'center',
+                            }}
+                        >
+                            <Icon data={FileZipper} size={'40px'} />
+                            <Text variant="body-2">Ссылка на файл с портфолио</Text>
+                        </Card>
+                    </Link>
+                )}
             </div>
         </div>
     );

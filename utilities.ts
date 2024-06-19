@@ -28,7 +28,7 @@ export const getPosts = async () => {
 
 export const getPostData = async (id: number) => {
     try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${id}`);
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${id}`, {cache: 'no-store'});
         if (res.ok) {
             return await res.json();
         }
@@ -38,7 +38,7 @@ export const getPostData = async (id: number) => {
 
 export const getCategories = async (): Promise<TCategory[] | null> => {
     try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`);
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {cache: 'no-store'});
         if (res.ok) {
             return await res.json();
         }
@@ -48,7 +48,9 @@ export const getCategories = async (): Promise<TCategory[] | null> => {
 
 export const getUserPostsData = async (email: string): Promise<TUser | null> => {
     try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/authors/${email}`);
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/authors/${email}`, {
+            cache: 'no-store',
+        });
         if (res.ok) {
             return await res.json();
         }
@@ -58,7 +60,7 @@ export const getUserPostsData = async (email: string): Promise<TUser | null> => 
 
 export const getPostByID = async (id: string): Promise<TPost | null> => {
     try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${id}`);
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${id}`, {cache: 'no-store'});
         if (res.ok) {
             return await res.json();
         }
@@ -67,10 +69,24 @@ export const getPostByID = async (id: string): Promise<TPost | null> => {
 };
 export const getPostByCategory = async (category: string): Promise<TCategory | null> => {
     try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories/${category}`);
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories/${category}`, {
+            cache: 'no-store',
+        });
         if (res.ok) {
             return await res.json();
         }
     } catch (error) {}
     return null;
 };
+export const getPostsByCategory = async (category: string): Promise<TCategory | null> => {
+    try {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories/${category}`, {
+            cache: 'no-store',
+        });
+        if (res.ok) {
+            return await res.json();
+        }
+    } catch (error) {}
+    return null;
+};
+

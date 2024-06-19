@@ -13,8 +13,8 @@ export function MapCategories({CategoriesData}: Props) {
             {CategoriesData &&
                 CategoriesData.map((category) => (
                     <li key={category.id}>
-                        <Link href={`/categories/${category.categoryName}`}>
-                            {category.categoryName}
+                        <Link href={`/category/${category.categoryName}`}>
+                            {category.transcribeName}
                         </Link>
                     </li>
                 ))}
