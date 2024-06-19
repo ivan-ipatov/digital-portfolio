@@ -12,7 +12,7 @@ export function UserDiplomasProfile({DiplomaData}: Props) {
             <>
                 <AddNewPost link={'diploma'} />
                 <PortfolioAttachments
-                    attachments={DiplomaData?.map((data) => data.attachments[0]) ?? []}
+                    attachments={DiplomaData?.map((data) => data.attachments)[0] ?? []}
                 />
             </>
         );
