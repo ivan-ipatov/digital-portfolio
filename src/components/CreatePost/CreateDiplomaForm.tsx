@@ -68,7 +68,7 @@ export function CreateDiplomaForm() {
                     <TextArea minRows={3} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <div className={styles[b('grid-inner')]}>
-                    <Text variant="subheader-3">Выберите изображение для поисковиков</Text>
+                    <Text variant="subheader-3">Выберите изображение грамоты</Text>
                     <Text variant={'caption-2'}>Принимаются только форматы .png .jpg .jpeg</Text>
 
                     <Card className={styles[b('card')]}>

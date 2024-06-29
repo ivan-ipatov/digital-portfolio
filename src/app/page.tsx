@@ -13,6 +13,8 @@ export default function Home() {
             <ChangeLog />
             <PostsByCategory name={'Наука'} category={'science'} />
             <PostsByCategory name={'Программирование'} category={'programming'} />
+            <PostsByCategory name={'ИИ'} category={'ai'} />
+            <PostsByCategory name={'Дизайн'} category={'design'} />
         </main>
     );
 }

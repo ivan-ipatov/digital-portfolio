@@ -1,6 +1,7 @@
 import {formatDate, getPostByID} from '../../../../utilities';
 import {PostPageChangeLog} from '@/components/Posts/PostPageChangeLog';
 import {PostPage} from '@/components/Posts/PostPage';
+import {Text} from "@gravity-ui/uikit";
 
 type Props = {
     params: {id: string};
@@ -21,13 +22,16 @@ export default async function Page(props: Props) {
             />
         );
     }
+    if (postData !== null) {
     return (
         <PostPage
+            id={postData?.id ?? ''}
             title={postData?.title ?? ''}
             image={postData?.thumbnail ?? '/no-photo.png'}
             shortDescription={postData?.shortDescription ?? ''}
             description={postData?.description ?? ''}
             author={postData?.author['name'] ?? ''}
+            email={postData?.author['email'] ?? ''}
             date={formatDate(postData?.createdAt)}
             attachments={postData?.attachments ?? []}
             direction={postData?.direction ?? ''}
@@ -35,5 +39,6 @@ export default async function Page(props: Props) {
             endPeriod={postData?.endPeriod ?? ''}
             link={postData?.link ?? ''}
         />
-    );
+    );}
+    return <Text variant="header-2" style={{display: 'grid', placeContent: 'center'}}>Страницы не существует</Text>;
 }
